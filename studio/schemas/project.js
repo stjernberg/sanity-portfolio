@@ -20,18 +20,18 @@ export default {
       name: "description",
       type: "text"
     },
-    {
-      name: "projectType",
-      title: "Project type",
-      type: "string",
-      options: {
-        list: [
-          { value: "personal", title: "Personal"},
-          { value: "client", title: "Client"},
-          { value: "school", title: "School"},
-        ],
-      },
-    },
+    // {
+    //   name: "projectType",
+    //   title: "Project type",
+    //   type: "string",
+    //   options: {
+    //     list: [
+    //       { value: "personal", title: "Personal"},
+    //       { value: "client", title: "Client"},
+    //       { value: "school", title: "School"},
+    //     ],
+    //   },
+    // },
     {
       name: 'mainImage',
       title: 'Main image',

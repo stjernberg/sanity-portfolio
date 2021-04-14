@@ -30,7 +30,7 @@ export const Projects = () => {
   })
   return (
     <PageWrapper>
-      <h1>My projects</h1>
+      <Heading>My projects</Heading>
       <ProjectsWrapper>
         
         {projectData && projectData.map((project, index) => (
@@ -44,9 +44,10 @@ export const Projects = () => {
               
               <Tags>
                 {project.tags.map((tag, index) => (
-                  <Tag key={index}>{(index ? " | " : "") + tag}</Tag>
+                  <Tag key={index}>{(index ? "  | " : " ") + tag}</Tag>
                 ))}
               </Tags>
+              
             </ProjectLink>
             {/* // <span>
       //   <p>Finished on</p>:{" "}
@@ -61,11 +62,18 @@ export const Projects = () => {
 };
 
 
+const Heading = styled.h1`
+  font-weight: bold;
+  margin-top: 15px;
+`
 const Tag = styled.p`
   font-weight: bold;
 `
 const Tags = styled.div`
   display: flex;
+  margin-top: 15px; 
+  justify-content: center;
+  
 `
 // const ImageContainer = styled.div`
 //    height: 250px; 
@@ -79,24 +87,25 @@ const ProjectLink = styled.a`
 
 const Title = styled.h2`
    position: absolute;
+   color: grey;
     top: 30%;
     left: 30%;
     font-size: 25px;
-    font-weight: bold;
-    
+    font-weight: bold;  
+    font-family: 'RocknRoll One', sans-serif;
 `
 
 const Project = styled.article`
   margin: 70px;
   background: #f5f5f5;
   padding: 15px;
-  width: 490px;
-  height: 350px;
+  width: 450px;
+  height: 430px;
   position: relative;
-  box-shadow: 0 10px 10px #999;
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 10px 10px #707070;
+  transition: box-shadow 0.5s ease;
   &:hover{
-    box-shadow: 5px 10px 10px #999;
+    box-shadow: 5px 10px 10px  #707070;
     }
 `
 
@@ -105,9 +114,7 @@ const ProjectsWrapper = styled.section`
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 50px;
-  
-
+  margin-top: 30px;
 `
 const Img = styled.img`
   /* width: 510px;*/
