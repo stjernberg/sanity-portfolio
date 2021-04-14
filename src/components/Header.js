@@ -14,9 +14,9 @@ export const Header = () => {
         <PageLink to="/" exact >
           <li>About me</li>
         </PageLink>
-        <PageLink to="/post">
+        {/* <PageLink to="/post">
           <li>Blog Posts</li>
-        </PageLink>
+        </PageLink> */}
         <PageLink to="/projects">
           <li>Projects</li>
         </PageLink>
