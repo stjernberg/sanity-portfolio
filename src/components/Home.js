@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components/macro";
-import sanityClient from "../client.js";
-import imageUrlBuilder from "@sanity/image-url";
+// import sanityClient from "../client.js";
+// import imageUrlBuilder from "@sanity/image-url";
 
 import { PageWrapper } from "../styling/GlobalStyling";
 // import BeachImg from '../assets/beach2.jpg'
