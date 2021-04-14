@@ -8,27 +8,27 @@ import { PageWrapper } from "../styling/GlobalStyling";
 // import BackgroundImg from '../assets/background-1.jpg'
 import ProfileImg from '../assets/profilepic.jpg'
 
-const builder = imageUrlBuilder(sanityClient);
-const urlFor = source => {
-  return builder.image(source);
-}
+// const builder = imageUrlBuilder(sanityClient);
+// const urlFor = source => {
+//   return builder.image(source);
+// }
 
 export const Home = () => {
 
-  const [author, setAuthor] = useState(null);
+  // const [author, setAuthor] = useState(null);
 
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "author"]{
-          name,
-          bio,
-          "authorImage": image.asset->url
-      }`
-      )
-      .then((data) => setAuthor(data[0]))
-      .catch(console.error);
-  }, []);
+  // useEffect(() => {
+  //   sanityClient
+  //     .fetch(
+  //       `*[_type == "author"]{
+  //         name,
+  //         bio,
+  //         "authorImage": image.asset->url
+  //     }`
+  //     )
+  //     .then((data) => setAuthor(data[0]))
+  //     .catch(console.error);
+  // }, []);
 
   // if (!author) return <div>Loading...</div>;
   return (
