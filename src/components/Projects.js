@@ -88,9 +88,6 @@ export const Projects = () => {
 const PaginationWrapper=styled.div`
   bottom: 0;
 `
-const Span = styled.span`
-  margin-left: 350px;
-`
 const Description = styled.p`
   margin-top: 10px;
 `
