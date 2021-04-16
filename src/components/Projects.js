@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import styled from "styled-components/macro";
-import { ChevronsRight } from "react-feather";
+// import { ChevronsRight } from "react-feather";
+import Pagination from "react-sanity-pagination";
 import sanityClient from "../client.js";
+import "../styling/paginationStyling.css";
 import { PageWrapper } from "../styling/GlobalStyling";
+
+const itemsToSend = [];
 
 export const Projects = () => {
 
-  const [projectData, setProjectData] = useState(null);
+  const postsPerPage = 6;
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     sanityClient
@@ -25,45 +30,68 @@ export const Projects = () => {
               },
               alt
           }
-      }`).then((data) => setProjectData(data))
+       } `).then(data => itemsToSend.push(...data))
       .catch(console.error);
+    // .then((data) => setProjectData(data))
+  }, [])
 
-  })
+  // Create an action which will be called on paginate
+  // This will return the current Page, Range of items and the Items to render
+  const action = (page, range, items) => {
+    console.log(page, range, items);
+    // Update State
+    setItems(items);
+  };
+
   return (
     <PageWrapper>
       <Heading>Featured projects</Heading>
       <ProjectsWrapper>
-        {projectData && projectData.map((project, index) => (
+        {items && items.map((project, index) => (
           <Project key={index}>
             <ProjectLink href={project.link} alt={project.title} target="_blank" rel="noopener noreferrer" >
-              <Title>{project.title}</Title>  
+              <Title>{project.title}</Title>
               <Img
                 src={project.mainImage.asset.url}
-                alt={project.mainImage.alt} /> 
-                <Description>{project.description}</Description> 
-                
-                {/* <ChevronsRight color="#858181" size="22" /> */}
-              
+                alt={project.mainImage.alt} />
+              <Description>{project.description}</Description>
+
+              {/* <ChevronsRight color="#858181" size="22" /> */}
+
               <Tags>
                 {project.tags.map((tag, index) => (
                   // <Tag key={index}>{(index ? "  | " : " ") + tag}</Tag>
-                   <Tag key={index}>{tag}</Tag>
+                  <Tag key={index}>{tag}</Tag>
 
                 ))}
-              </Tags>             
+              </Tags>
             </ProjectLink>
           </Project>
         ))}
-      
       </ProjectsWrapper>
+
+      <PaginationWrapper>
+        <Pagination
+          nextButton={true}
+          prevButton={true}
+          nextButtonLabel="&gt;&gt;"
+          prevButtonLabel="&lt;&lt;"
+          items={itemsToSend}
+          action={action}
+          postsPerPage={postsPerPage}
+        />
+      </PaginationWrapper>
     </PageWrapper>
   );
 };
 
+const PaginationWrapper=styled.div`
+  bottom: 0;
+`
 const Span = styled.span`
   margin-left: 350px;
 `
-const Description= styled.p`
+const Description = styled.p`
   margin-top: 10px;
 `
 const Heading = styled.h1`
