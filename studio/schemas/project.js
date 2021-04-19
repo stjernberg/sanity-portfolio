@@ -45,6 +45,11 @@ export default {
       type: "url"
     },
     {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
+    },
+    {
       name: "tags",
       type: "array",
       of: [
@@ -57,4 +62,15 @@ export default {
       },
     },
   ],
+
+  orderings: [
+    {
+      title: 'Published at, New',
+      name: 'publishedAtDesc',
+      by: [
+        {field: 'publishedAt', direction: 'desc'}
+      ]
+    },
+    
+  ]
 };

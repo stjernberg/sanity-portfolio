@@ -16,7 +16,7 @@ export const Projects = () => {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "project"]{
+        `*[_type == "project"]|order(publishedAt asc){
             title,
             date,
             description,

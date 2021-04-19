@@ -1,1 +1,4 @@
 User-specific packages can be placed here
+"plugins": [
+  "order-documents"
+],

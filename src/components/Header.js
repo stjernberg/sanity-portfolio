@@ -101,9 +101,9 @@ const NavBar = styled.ul`
 `
 const activeClassName = "nav-item-active";
 const PageLink = styled(NavLink).attrs({ activeClassName })`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+  /* display: flex;
+  align-items: center;*/
+  text-decoration: none; 
   color: #000;
   padding: 10px 0;
 
