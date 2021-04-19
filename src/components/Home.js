@@ -109,14 +109,12 @@ const SkillsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 80px;
- /* align-items: center; */
  
   p{
     font-weight: bold;
   }
 `
 const Skills = styled.h2`
-  /* text-align: center; */
   margin-top: 30px;
 `
 const About = styled.div`
@@ -152,14 +150,3 @@ const Heading = styled.h1`
   margin-top: 80px;
   width: 100%;
 `
-// const ImageWrapper = styled.div`
-//   /* background-image: url(${BackgroundImg});
-//   background-size: cover;
-//   background-position: center; */
-//   background: #b7c9e2;
-//   width: 100%;
-//   height: 100%;
-//   margin-top: 0;
-//   display: flex;
-//   justify-content: center;
-//   apgn-items: center;

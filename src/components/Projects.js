@@ -143,10 +143,8 @@ const ProjectsWrapper = styled.section`
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  /* margin-top: 15px; */
 `
 const Img = styled.img`
-  /* width: 510px;*/
   height: 250px; 
   width: 100%;
   &:hover{

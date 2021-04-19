@@ -15,9 +15,6 @@ export const Header = () => {
         <PageLink to="/" exact >
           <li>About me</li>
         </PageLink>
-        {/* <PageLink to="/post">
-          <li>Blog Posts</li>
-        </PageLink> */}
         <PageLink to="/projects">
           <li>Projects</li>
         </PageLink>
@@ -53,7 +50,6 @@ const IconContainer = styled.div`
   display: flex;
   align-items: center;
   margin: 15px;
-  /* justify-content: space-between; */
 `
 
 const Name = styled.h1`
@@ -73,8 +69,6 @@ const NameBox = styled.div`
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  /* background: #cd5c5c; */
-  /* background: #0277bd; */
   background: rgb(185,217,235);
   background: radial-gradient(circle, rgba(185,217,235,1) 0%, rgba(102,153,204,1) 55%, rgba(102,187,204,1) 100%);
   border-bottom-left-radius: 50% 10%;
@@ -82,7 +76,6 @@ const Nav = styled.nav`
   color: #fff;
   align-items: center;
   height: 130px;
-  /* margin: 0; */
   padding: 30px;
 
 `
@@ -91,7 +84,7 @@ const NavBar = styled.ul`
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  /* z-index: 5; */
+ 
 
   li {
       margin: 20px;
@@ -101,8 +94,6 @@ const NavBar = styled.ul`
 `
 const activeClassName = "nav-item-active";
 const PageLink = styled(NavLink).attrs({ activeClassName })`
-  /* display: flex;
-  align-items: center;*/
   text-decoration: none; 
   color: #000;
   padding: 10px 0;
