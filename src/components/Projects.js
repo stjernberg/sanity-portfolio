@@ -129,7 +129,7 @@ const Project = styled.article`
   background: #f5f5f5;
   padding: 15px;
   width: 450px;
-  height: 430px;
+  height: 470px;
   position: relative;
   box-shadow: 0 10px 10px #707070;
   transition: box-shadow 0.5s ease;
